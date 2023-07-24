@@ -26,8 +26,6 @@ export class HomePageComponent {
       setTimeout(() => {
         this.loading = false;
       }, 1000);
-      console.log('Data movies', this.listComics);
-      console.log('Data results', this.results);
     })
   }
 }

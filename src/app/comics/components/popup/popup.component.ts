@@ -26,7 +26,6 @@ export class PopupComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) {
     this.data
-    console.log("Se cargo la data", data)
   }
 
   onNoClick(): void {

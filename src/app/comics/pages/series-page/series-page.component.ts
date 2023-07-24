@@ -31,14 +31,12 @@ export class SeriesPageComponent {
       setTimeout(() => {
         this.loading = false;
       }, 1000);
-      console.log('Data movies', this.listSeries);
-      console.log('Data results', this.results);
+
     })
   }
 
   cargar(id: number) {
     this.SeriesMarvel.getSeriesId(id).subscribe((data: any) => {
-      console.warn("ID serie", data.data.results[0].id)
       this.resultsId = data.data.results;
     })
   }
@@ -48,7 +46,7 @@ export class SeriesPageComponent {
     if (!id) throw Error("Se necesita el id")
 
     this.SeriesMarvel.getSeriesId(id).subscribe((data: any) => {
-      console.warn("ID serie", data.data.results[0].id)
+
       this.resultsId = data.data.results;
     })
 
@@ -57,8 +55,6 @@ export class SeriesPageComponent {
     });
 
     dialogRef.afterClosed().subscribe(resultsId => {
-      console.log('The dialog was closed');
-      console.log({ Perros: resultsId });
       this.resultsId;
     });
   }

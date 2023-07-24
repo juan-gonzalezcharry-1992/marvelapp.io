@@ -14,7 +14,6 @@ export class SearchPipe implements PipeTransform {
 
     return results.filter(item => {
       // Personaliza el criterio de filtrado según tus necesidades
-      console.log('--> Buscaste', searchText)
       return item.title.toLowerCase().includes(searchText);
     });
   }
