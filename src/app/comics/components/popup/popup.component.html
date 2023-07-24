@@ -1,0 +1,44 @@
+<div class="" *ngFor="let datosObtenidos of data">
+  <h1 mat-dialog-title class="TitulosPjs">{{datosObtenidos.title}}</h1>
+  <div mat-dialog-content>
+
+    <hr>
+    <p class="TitulosPjs">Historias</p>
+
+    <p class="pjs" *ngFor="let historias of datosObtenidos.stories.items">
+
+      {{historias.name}}
+
+    </p>
+    <hr>
+    <p class="TitulosPjs">Creadores</p>
+
+    <p class="pjs" *ngFor="let creadores of datosObtenidos.creators.items">
+      {{creadores.name}}
+    </p>
+    <hr>
+    <p class="TitulosPjs">Personajes</p>
+
+    <p class="pjs" *ngFor="let personajes of datosObtenidos.characters.items">
+
+      <span *ngIf="datosObtenidos.characters.available > 0">
+        {{personajes.name}}
+      </span>
+    </p>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cerrar</button>
+  </div>
+</div>
+
+
+
+
+
+<!-- {{data | json}} -->
+
+
+<!-- <div class="" *ngIf="data">
+  <h1 mat-dialog-title>{{data | json}}</h1>
+</div> -->
