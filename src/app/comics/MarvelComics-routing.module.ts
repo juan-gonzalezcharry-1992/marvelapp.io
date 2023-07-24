@@ -13,7 +13,7 @@ const routes: Routes = [
       { path: '', component: HomePageComponent },
       { path: 'Comics', component: HomePageComponent },
       { path: 'Series', component: SeriesPageComponent },
-      { path: '**', redirectTo: 'Comics' }
+      { path: '**', redirectTo: '' }
     ]
   }
 ];
