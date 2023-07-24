@@ -10,9 +10,10 @@ const routes: Routes = [
   {
     path: '',
     children: [
+      { path: '', component: HomePageComponent },
       { path: 'Comics', component: HomePageComponent },
       { path: 'Series', component: SeriesPageComponent },
-      { path: '**', redirectTo: '/' }
+      { path: '**', redirectTo: 'Comics' }
     ]
   }
 ];

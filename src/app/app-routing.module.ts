@@ -5,12 +5,12 @@ import { Route, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'marvel',
+    path: '',
     loadChildren: () => import('./comics/MarvelComics.module').then(m => m.MarvelComicsModule),
   },
   {
     path:'**',
-    redirectTo:'/'
+    redirectTo:'marvel'
   }
 ]
 
