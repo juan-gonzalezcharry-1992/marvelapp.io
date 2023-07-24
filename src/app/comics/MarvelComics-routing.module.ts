@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: 'Comics', component: HomePageComponent },
       { path: 'Series', component: SeriesPageComponent },
-      { path: '**', redirectTo: 'Comics' }
+      { path: '**', redirectTo: '/' }
     ]
   }
 ];
