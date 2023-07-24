@@ -24,7 +24,7 @@ export class MovieServiceService {
     return this.http.get<any>(`${this.url}/series`, { params })
   }
 
-  getSeriesId(id: number) {
+getSeriesId(id: number) {
 
     const params = new HttpParams()
       .set('ts', this.ts)
