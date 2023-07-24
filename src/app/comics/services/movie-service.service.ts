@@ -13,18 +13,33 @@ export class MovieServiceService {
   private limit: string = '20'
 
   constructor(private http: HttpClient) { }
-
+  /** getComics() nos pemite realizar la peticion get a la api relacionada con los comics */
   getComics() {
-    const params = new HttpParams().set('ts', this.ts).set('apikey', this.apikey).set('hash', this.hash).set('limit', this.limit)
+    const params = new HttpParams()
+      .set('ts', this.ts)
+      .set('apikey', this.apikey)
+      .set('hash', this.hash)
+      .set('limit', this.limit)
     return this.http.get<any>(`${this.url}/comics`, { params });
   }
-
+  /**
+   * getSeries() nos pemite realizar la peticion get a la api relacionada con las series
+   * que se nos muestral al finalizar el loading
+   */
   getSeries() {
-    const params = new HttpParams().set('ts', this.ts).set('apikey', this.apikey).set('hash', this.hash).set('limit', this.limit)
+    const params = new HttpParams()
+      .set('ts', this.ts)
+      .set('apikey', this.apikey)
+      .set('hash', this.hash)
+      .set('limit', this.limit)
     return this.http.get<any>(`${this.url}/series`, { params })
   }
-
-getSeriesId(id: number) {
+  /**
+   * getSeriesId(id: number) nos pemite realizar la peticion get a la api relacionada con las series ,
+   * pero teniendo encuenta el id para tener una serie en específica
+   * que la podremos visualizar al dar clik en la imagen
+   */
+  getSeriesId(id: number) {
 
     const params = new HttpParams()
       .set('ts', this.ts)

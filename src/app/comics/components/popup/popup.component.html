@@ -1,3 +1,5 @@
+<!-- A continuación encontramos la estructura html de dialago (Dialos de Angular Material) que usamos para iterar la infomacion y luego ser mostrada -->
+
 <div class="" *ngFor="let datosObtenidos of data">
   <h1 mat-dialog-title class="TitulosPjs">{{datosObtenidos.title}}</h1>
   <div mat-dialog-content>
@@ -20,10 +22,7 @@
     <p class="TitulosPjs">Personajes</p>
 
     <p class="pjs" *ngFor="let personajes of datosObtenidos.characters.items">
-
-      <span *ngIf="datosObtenidos.characters.available > 0">
-        {{personajes.name}}
-      </span>
+      {{personajes.name}}
     </p>
 
   </div>
@@ -31,14 +30,3 @@
     <button mat-button (click)="onNoClick()">Cerrar</button>
   </div>
 </div>
-
-
-
-
-
-<!-- {{data | json}} -->
-
-
-<!-- <div class="" *ngIf="data">
-  <h1 mat-dialog-title>{{data | json}}</h1>
-</div> -->

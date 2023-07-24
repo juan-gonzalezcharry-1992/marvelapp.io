@@ -22,7 +22,9 @@ export class SeriesPageComponent {
   }
 
 
-
+  /**
+   * getSeries() nos permite guadar la información obtenida de la api en un array results
+   */
   getSeries() {
     this.SeriesMarvel.getSeries().subscribe((data: any) => {
       this.listSeries = data.data;
@@ -34,13 +36,17 @@ export class SeriesPageComponent {
 
     })
   }
-
+  /**
+   * cargar(id: number) nos permite realizar una carga preliminar de la información obtenida por el id
+   */
   cargar(id: number) {
     this.SeriesMarvel.getSeriesId(id).subscribe((data: any) => {
       this.resultsId = data.data.results;
     })
   }
-
+  /**
+   * AbrirPop(id: number) nos permite abrir el dialog con la infomación cargada preliminarmente e inyectando la data al dialog
+   */
   AbrirPop(id: number): void {
 
     if (!id) throw Error("Se necesita el id")

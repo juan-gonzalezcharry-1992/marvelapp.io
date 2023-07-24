@@ -17,7 +17,9 @@ export class HomePageComponent {
   constructor(private movieService: MovieServiceService) {
     this.getComics();
   }
-
+/**
+ * Guadamos la info en obtenida de la api que usaremos para motrar la info correspondiente al comic
+ */
   getComics() {
     this.movieService.getComics().subscribe((data: any) => {
       this.listComics = data.data;
